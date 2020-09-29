@@ -1,7 +1,7 @@
 <template>
   <div>
     <Heading>
-      <h1 slot="heading">Contact Us</h1>
+      <h1 slot="heading">{{title}}</h1>
     </Heading>
     <b-alert v-model="messageSubmitted" variant="success" dismissible>Your message has been received!</b-alert>
     <b-form>
@@ -80,7 +80,13 @@ export default {
       firstName: '',
       lastName: '',
       emailAddress: '',
-      message: ''
+      message: '',
+      title: 'Contact',
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }

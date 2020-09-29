@@ -1,7 +1,7 @@
 <template>
   <div>
     <Heading>
-      <h1 slot="heading">Art</h1>
+      <h1 slot="heading">{{title}}</h1>
     </Heading>
     <!-- LOOP through art pieces -->
     <div class="row">
@@ -168,7 +168,13 @@ export default {
           medium: "Color Pencil on Paper",
           artistDisplayName: "Heather Malloy"
         }
-      ]
+      ],
+      title: 'Art'
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
   // I could not, for the life of me, figure this out.

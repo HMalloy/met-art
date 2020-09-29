@@ -1,7 +1,7 @@
 <template>
   <div>
     <Heading>
-      <h1 slot="heading">Blog</h1>
+      <h1 slot="heading">{{title}}</h1>
     </Heading>
     <div role="tablist" id="my-accordion">
       <!-- use bootstrap-vue accordion component -->
@@ -33,8 +33,9 @@
 <script>
 export default {
   name: 'Blog',
-  data () {
+  data() {
     return {
+      title: 'Blog',
       posts: [
           {
             id: "post-1",
@@ -88,6 +89,11 @@ export default {
             pic:"http://heatherdaniellehaws.com/images/heather-malloy2020.jpg"
           }
         ]
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }

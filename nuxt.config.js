@@ -1,15 +1,24 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'met-art',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'A fun site to play with the art of The Met!' },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        keywords: 'art museum, the art museum, art museum exhibits, art museum websites, metropolitan art museum, famous artists'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    titleTemplate: '%s - Met Art'
+  },
+
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Met Art` : `Met Art`;
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
